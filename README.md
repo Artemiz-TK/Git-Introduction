@@ -41,6 +41,8 @@ Se dois jogadores modificarem o mesmo nível, o sistema ajuda a juntar as mudan�
 #### Tradução Técnica:
 
 - Checkpoint = Commit
+- Jogo completo = Repositórios clonados
+- Juntar as mudanças = Merge/Rebase
 
 ## ⚙️ Instalação
 
@@ -251,3 +253,4 @@ git fetch origin main
 ```bash
 git diff main origin/main # Mostra diferenças entre sua branch e o remoto
 ```
+
