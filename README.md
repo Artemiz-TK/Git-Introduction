@@ -231,7 +231,7 @@ git merge feature # Combina as alterações da "feature" na "main"
 
 ##### Comando fetch
 
-Ok, esse comando do git basicamente atualiza todo o projeto local, baixando todo o conteúdo do repositório remoto. Mas esse comando em si só isso, ele só atualiza.
+Ok, esse comando do git basicamente atualiza todo o projeto local, baixando todo o conteúdo do repositório remoto. Mas esse comando em si só faz isso, ele só atualiza.
 
 - **Não altera arquivos locais**, apenas baixa as mudanças para uma **área temporária.**
 - Útil para **verificar atualizações** antes de **integrá-las** ao código.
