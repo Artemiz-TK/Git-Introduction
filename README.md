@@ -148,6 +148,7 @@ Bom, um remote é basicamente um nome que aponta para o link de um repositório 
 
 ```bash
 git clone https://github.com/Artemis-TK/Git-Introduction.git
+cd Git-Introduction
 git remote -v
 ```
 
