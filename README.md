@@ -126,12 +126,12 @@ Um exemplo prático de como clonar o mesmo repositório com HTTPS e SSH:
 
 HTTPS:
 ```bash
-git clone https://github.com/Artemis-TK/Git-Introduction.git
+git clone https://github.com/Artemiz-TK/Git-Introduction.git
 ```
 
 SSH:
 ```bash
-git clone git@github.com:Artemis-TK/Git-Introduction.git
+git clone git@github.com:Artemiz-TK/Git-Introduction.git
 ```
 
 Acredito que só vamos usar mais o HTTPS para clonar.
@@ -350,15 +350,15 @@ Aqui a gente vai entender um pouco do comando `git fetch`. Antes de ir pro coman
 Bom, um remote é basicamente um nome que aponta para o link de um repositório remoto. É como se fosse um tipo de atalho, que quando você digita o nome, é como se você estivesse digitando o link onde está o repositório. Sempre que você clona um repositório, o nome padrão do remote é "origin". Tente executar o comando abaixo para fixar melhor
 
 ```bash
-git clone https://github.com/Artemis-TK/Git-Introduction.git
+git clone https://github.com/Artemiz-TK/Git-Introduction.git
 cd Git-Introduction
 git remote -v
 ```
 
 Você vai ver algo assim
 ```yaml
-origin https://github.com/Artemis-TK/Git-Introduction.git (fetch)
-origin https://github.com/Artemis-TK/Git-Introduction.git (push)
+origin https://github.com/Artemiz-TK/Git-Introduction.git (fetch)
+origin https://github.com/Artemiz-TK/Git-Introduction.git (push)
 ```
 
 o nome "origin" está apontando diretamente para o link. Você pode mudar esse nome, mas é o normal ter essa nomenclatura. Se quiser mudar o nome padrão, basta executar esse comando:
