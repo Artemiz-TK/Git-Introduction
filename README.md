@@ -492,15 +492,15 @@ git commit -m "Merge da feature na main"
 
 Bom, esse tópico é bem importante porque pode acontecer algumas vezes, e é bom que a maioria saiba como resolver.
 
-Bom um conflito é basicamente a consequência de várias pessoas tentarem editar o mesmo conteúdo. Se uma pessoa tentar editar o código que outra pessoa está editando, pode ocorrer um conflito. A principal responsabilidade do comando `git merge` é combinar ramificações separadas e resolver quaisquer edições conflitantes.
+Bom um conflito é basicamente a consequência de várias pessoas tentarem editar o mesmo conteúdo. Se uma pessoa tentar editar o código que outra pessoa está editando, pode ocorrer um conflito. A principal responsabilidade do comando `git merge` é combinar ramificações separadas e resolver quaisquer edições que tenham conflitos.
 
 ##### <h3>Exemplo</h3>
 
 Imagine que você criou um repositório no github, depois clonou e agora já está no repositório local. Só que você deu permissão para mais uma pessoa, ela também clonou o repositório e está te ajudando com o desenvolvimento de algo.
 
-A primeira coisa que vai ser feita pra esse exemplo é criar um arwuivo, adicioná-lo a stage, depois fazer o commit
+A primeira coisa que vai ser feita pra esse exemplo é criar um arquivo, adicioná-lo a stage, depois fazer o commit
 
-Enão você faz o seguinte processo:
+Então você faz o seguinte processo:
 ```bash
 echo "Tarefa 1: Revisar o conteúdo com base nas novas exigências." > merge.txt
 echo "Tarefa 2: Agendar a próxima reunião." >> merge.txt
