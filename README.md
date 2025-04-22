@@ -11,6 +11,7 @@
       - [Tradução Técnica:](#tradução-técnica)
   - [⚙️ Instalação](#️-instalação)
       - [Windows](#windows)
+        - [Video para instalar o git](#video-para-instalar-o-git)
   - [Comandos Básicos](#comandos-básicos)
       - [Nomes e emails](#nomes-e-emails)
       - [Clones](#clones)
@@ -18,11 +19,11 @@
         - [Branch](#branch)
           - [Exemplo](#exemplo)
         - [Checkout](#checkout)
-          - [Utilizando o exemplo do tópico Branch, vamos trocar para a branch master](#utilizando-o-exemplo-do-tópico-branch-vamos-trocar-para-a-branch-master)
-        - [Log](#log)
           - [Exemplo](#exemplo-1)
-        - [Status](#status)
+        - [Log](#log)
           - [Exemplo](#exemplo-2)
+        - [Status](#status)
+          - [Exemplo](#exemplo-3)
       - [Adicionar, comentar e subir para o repositório (git add; git commit; git push)](#adicionar-comentar-e-subir-para-o-repositório-git-add-git-commit-git-push)
         - [Introdução bem básica](#introdução-bem-básica)
         - [Como é o procedimento](#como-é-o-procedimento)
@@ -32,21 +33,21 @@
         - [git fetch](#git-fetch)
           - [Pra quê serve](#pra-quê-serve)
           - [Como usar](#como-usar)
-          - [Exemplo](#exemplo-3)
+          - [Exemplo](#exemplo-4)
       - [git merge (mesclar)](#git-merge-mesclar)
         - [Pra quê serve](#pra-quê-serve-1)
         - [Como usar](#como-usar-1)
-        - [Exemplo](#exemplo-4)
-      - [❗Conflitos❗](#conflitos)
         - [Exemplo](#exemplo-5)
+      - [❗Conflitos❗](#conflitos)
+        - [Exemplo](#exemplo-6)
       - [git rebase](#git-rebase)
         - [Pra que serve](#pra-que-serve)
         - [Como usar](#como-usar-2)
-          - [Exemplo](#exemplo-6)
+          - [Exemplo](#exemplo-7)
       - [git pull](#git-pull)
         - [Pra que serve](#pra-que-serve-1)
         - [Como usar](#como-usar-3)
-          - [Exemplo](#exemplo-7)
+          - [Exemplo](#exemplo-8)
           - [Como finciona](#como-finciona)
 
 O **Git** é um sistema de controle de versões distribuído. Um sistema de controle de versões distribuído (como o **Git**) é como ter checkpoints compartilhados em um jogo multiplayer:
@@ -71,7 +72,7 @@ Se dois jogadores modificarem o mesmo nível, o sistema ajuda a juntar as mudan�
 
 ## ⚙️ Instalação
 
-#### Windows
+#### <h3>Windows</h3>
 
 Vá ao [site de download](https://git-scm.com/downloads "Downloads do git") para baixar o **Git**
 
@@ -83,7 +84,9 @@ cd ~\Downloads\ # vai para a pasta "Downloads"
 winget install --id Git.Git -e --source winget # baixa o executável via terminal na pasta atual
 ```
 
-Vou colocar o video futuramente com o tutorial para baixar
+##### <h4>Video para instalar o git</h4>
+
+<video src="./video/git-video-download.mp4"></video>
 
 ## Comandos Básicos
 
@@ -178,7 +181,9 @@ O **"*"** indica em qual branch você está atualmente. Logo abaixo você vai ap
 
 o comando `git checkout` é basicamente um comando que fica trocando de [branchs](#o-que-é-uma-branch) e voltar para alguns commits, como se estivesse viajando no tempo. Aqui, só vai ser preciso entender apenas a troca de **branchs**.
 
-###### <h5>Utilizando o exemplo do tópico [Branch](#exemplo), vamos trocar para a branch master</h5>
+Utilizando o exemplo do tópico [Branch](#exemplo), vamos trocar para a branch master
+
+###### <h5>Exemplo</h5>
 
 ```bash
 git checkout master # saindo da branch "main" para a "master"
