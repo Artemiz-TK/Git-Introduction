@@ -86,7 +86,7 @@ winget install --id Git.Git -e --source winget # baixa o executável via termina
 
 ##### <h4>Video para instalar o git</h4>
 
-<video src="./video/git-video-download.mp4"></video>
+<a href="https://www.youtube.com/watch?v=VmkEZ9qEPDU&t=101"><img src="https://img.youtube.com/vi/VmkEZ9qEPDU/0.jpg" alt=""></a>
 
 ## Comandos Básicos
 
