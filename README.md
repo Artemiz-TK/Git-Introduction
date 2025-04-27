@@ -181,7 +181,7 @@ O **"*"** indica em qual branch você está atualmente. Logo abaixo você vai ap
 
 ##### <h4>Checkout</h4>
 
-o comando `git checkout` é basicamente um comando que fica trocando de [branches](#o-que-é-uma-branch) e voltar para alguns commits, como se estivesse viajando no tempo. Aqui, só vai ser preciso entender apenas a troca de **branches**.
+o comando `git checkout` é basicamente um comando que fica trocando de [branches](#o-que-é-uma-branch) ou voltando para alguns commits, como se estivesse viajando no tempo. Aqui, só vai ser preciso entender apenas a troca de **branches**.
 
 Utilizando o exemplo do tópico [Branch](#exemplo), vamos trocar para a branch master
 
