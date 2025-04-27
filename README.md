@@ -434,7 +434,7 @@ Bom, acho que é isso que vai ser usado do `git diff`
 
 ##### <h4>Status</h4>
 
-O comando `git status` mostra em que branch você está, mas a principal funcionalidade é que esse comando exibe o estado do diretório de trabalho (onde os ainda não está na stage) e da área stage (quando você executa o comando `git add`). Também dá para ver se tem algum conflito por [merge](#mesclar-merge) com esse comando.
+O comando `git status` mostra em que branch você está, mas a principal funcionalidade é que esse comando exibe o estado do diretório de trabalho (onde ainda não se adicionou, ou seja, não executou o comando `git add`) e da área stage (quando você executa o comando `git add`). Também dá para ver se tem algum conflito por [merge](#mesclar-merge) com esse comando.
 
 ###### <h5>Exemplo</h5>
 
