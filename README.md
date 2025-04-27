@@ -297,7 +297,7 @@ Aqui a hash é bem mais curta
 
 Segue abaixo outro exemplo do `git log`
 ```bash
-git log origin/main..main # mostar os commits que estão no local e não no remoto
+git log origin/main..main # mostra os commits que estão no local e não no remoto
 git log main..origin/main # mostra os commits que estão no remoto e não no local
 ```
 
@@ -319,7 +319,7 @@ Date:   Sun Apr 27 00:45:10 2025 -0300
 
 Sim, isso é antes de eu ter subido essa versão do arquivo para o repositório.
 
-Se você executou o comando `git log main..origin/main` e existir algum commit no repositório que não exita no seu repositório local, atualize seu repositório usando o comando [git pull](#git-pull). E, por favor, não use a flag `--force` no comando git push. Pode gerar perda de dados. Para entender melhor sobre isso, vá para o tópico de [conflitos](#conflitos).
+Se você executou o comando `git log main..origin/main` e existir algum commit no repositório que não exista no seu repositório local, atualize seu repositório usando o comando [git pull](#git-pull). E, por favor, não use a flag `--force` no comando git push. Pode gerar perda de dados. Para entender melhor sobre isso, vá para o tópico de [conflitos](#conflitos).
 
 <br>
 
@@ -333,7 +333,7 @@ O comando `git diff` é usado para mostrar, comparar e entender melhor as mudan�
 git diff
 ```
 
-O comando acima vai mostrar as mudanças feitas na área de trabalho. Se você não tiver feito modificações, nada será exibido.
+O comando acima vai mostrar as mudanças feitas no diretório de trabalho. Se você não tiver feito modificações, nada será exibido.
 
 <br>
 Agora um exemplo melhor: execute o comando abaixo, não precisa entender muito o `git remote` já que não vamos usar.
@@ -352,7 +352,7 @@ git fetch --all
 git diff origin-a/main:./.gitignore origin-b/main:./.gitignore
 ```
 
-**Ok, o que tá acontecendo aqui?** Aqui, eu adicionei dois remotos - um com o nome `origin-a`, outro com o nome `origin-b` - que apontam para um determinados repositórios distintos. Depois, eu busco todas as atualizações possivéis e, por fim, comparo dois arquivos.
+**Ok, o que tá acontecendo aqui?** Aqui, eu adicionei dois remotos - um com o nome `origin-a`, outro com o nome `origin-b` - que apontam para determinados repositórios distintos. Depois, eu busco todas as atualizações possivéis e, por fim, comparo dois arquivos.
 
 Agora vamos focar na linha do comando `git diff`. **O que essa linha faz?** Vou dividir por partes:
 
@@ -398,7 +398,7 @@ index c8d4fba..84b562f 100644
 \ No newline at end of file
 ```
 
-Não dá para aparecer aqui as linhas vermelhas e verdes, mas se você executar, vai conseguir ver.
+Não dá pra ver as linhas vermelhas e verdes nessa saída, mas se você executar, vai conseguir ver.
 
 
 Dá para usar o comando `git diff` com arquivos, branches, commits, [conflitos não resolvidos](#conflitos) e por aí vai.
@@ -409,7 +409,7 @@ git log --oneline
 git diff 0d97ee9 424a9b7 # isso é só um exemplo, com certeza a hash dos seus commits vão ser diferentes dessas
 ```
 
-ou um comparar as mudanças de um commit antigo com a área de trabalho atual (onde não se adicionou e nem commitou nada):
+ou comparar as mudanças de um commit antigo com o diretório de trabalho atual (onde não se adicionou e nem commitou nada):
 ```bash
 git diff HEAD~1
 ```
@@ -434,7 +434,7 @@ Bom, acho que é isso que vai ser usado do `git diff`
 
 ##### <h4>Status</h4>
 
-O comando `git status` mostra em que branch você esta, mas a principal funcionalidade é que esse comando exibe o estado do diretório de trabalho (onde os ainda não está na stage) e da área stage (quando você executa o comando `git add`). Também dá para ver se tem algum conflito por [merge](#mesclar-merge) com esse comando.
+O comando `git status` mostra em que branch você está, mas a principal funcionalidade é que esse comando exibe o estado do diretório de trabalho (onde os ainda não está na stage) e da área stage (quando você executa o comando `git add`). Também dá para ver se tem algum conflito por [merge](#mesclar-merge) com esse comando.
 
 ###### <h5>Exemplo</h5>
 
@@ -490,7 +490,7 @@ git add * # adiciona todos os arquivos que foram modificados
 
 Aqui a gente vai entender um pouco do comando `git fetch`. Antes de ir pro comando, é preciso entender um pouco sobre o que são **remotes** e **branches**
 
-##### O que é um remote?
+##### <h4>O que é um remote?</h4>
 Bom, um remote é basicamente um nome que aponta para o link de um repositório remoto. É como se fosse um tipo de atalho, que quando você digita o nome, é como se você estivesse digitando o link onde está o repositório. Sempre que você clona um repositório, o nome padrão do remote é "origin". Tente executar o comando abaixo para fixar melhor
 
 ```bash
@@ -516,7 +516,7 @@ Acho que deve ter ficado claro, agora é só tentar entender branches pra ir pro
 
 ---
 
-##### O que é uma branch?
+##### <h4>O que é uma branch?</h4>
 Uma **branch** (ou "ramo") é uma **linha de desenvolvimento separada** dentro do projeto.
 
 - Imagine que o projeto é um **livro**: uma branch é como um **rascunho alternativo** do livro, onde você pode testar novas ideias sem estragar a versão principal (`main`).
@@ -545,7 +545,7 @@ git commit -m "Adiciona Granola na lista" # fazendo o commit com a mensagem "adi
 Agora é só criar a outra branch
 
 ```bash
-git checkout -b feature  # Cria a branch e muda para ela
+git checkout -b feature  # cria a branch e muda para ela
 ```
 
 Objetivo: "Vou trabalhar em uma cópia segura da lista (feature), sem afetar a original (main)."
@@ -553,8 +553,8 @@ Objetivo: "Vou trabalhar em uma cópia segura da lista (feature), sem afetar a o
 <br><br>
 
 ```bash
-echo "Monster" >> lista-compras.txt # Adiciona "Monster" na última linha do arquivo
-echo "RedBull" >> lista-compras.txt # Adiciona "RedBull" na última linha do arquivo
+echo "Monster" >> lista-compras.txt # adiciona "Monster" na última linha do arquivo
+echo "RedBull" >> lista-compras.txt # adiciona "RedBull" na última linha do arquivo
 ```
 
 Agora é só fazer adicionar e commitar as mudanças na branch feature:
@@ -566,13 +566,13 @@ git commit -m "Adiciona Monster e RedBull"
 Depois disso, volte para a branch `main`
 
 ```bash
-git checkout main # Volta para a branch principal
+git checkout main # volta para a branch principal
 ```
 
 Agora é só mesclar (merge)
 
 ```bash
-git merge feature # Combina as alterações da "feature" na "main"
+git merge feature # combina as alterações da "feature" na "main"
 ```
 
 ---
@@ -601,7 +601,7 @@ git fetch origin main
 
 2. Compara a branch remota com sua branch local:
 ```bash
-git diff main origin/main # Mostra diferenças entre sua branch e o remoto
+git diff main origin/main # mostra diferenças entre sua branch e o remoto
 ```
 
 #### <h3>git merge (mesclar)</h3>
@@ -662,7 +662,7 @@ git commit -m "Adicionando tarefas com foco na clareza"
 git push origin main
 ```
 
-E que acontece? O push é rejeitado. O Git bloqueia o push porque o repositório remoto foi atualizado desde o último [pull](#git-pull). Uma mensagem similar a mensagem a seguir vai aparecer:
+E que acontece? O push é rejeitado. O Git bloqueia o push porque o histórico da sua branch local está desatualizado em relação ao remoto. Uma mensagem similar a mensagem a seguir vai aparecer:
 ```yaml
 ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'https://github.com/exemplo/projeto.git'
@@ -672,9 +672,10 @@ O link é só para deixar mais didático
 
 A outra pessoa tem que atualizar o repositório local:
 ```bash
-git fetch origin main
+git fetch origin # aqui vai atualizar todos as branches remotos
 git merge origin/main
 ```
+Pausa rápida: Eu não sei se vamos usar apenas a branch `main` para o projeto ou se vamos fazer mais de uma branch, então é melhor usar o comando `git fetch origin`
 
 Depois que o repositório local tiver sido atualizado e mesclado, o arquivo que ambas as pessoas estavam editando vai estar assim:
 ```yaml
@@ -686,7 +687,7 @@ Tarefa 1: Revisar o conteúdo com base nas novas exigências.
 Tarefa 2: Agendar a próxima reunião.
 ```
 
-O conteúdo antes dos símbolos "=======" representa o arquivo no repositório local, já o conteúdo depois desses símbolos representa o arquivo no repositório remoto e precisa ter alteração para resolver o conflito. Tudo o que estiver depois dos símbolos ">>>>>>>" não precisa ser alterado.
+O conteúdo entre <<<<<<< HEAD e ======= é a sua versão local. O conteúdo entre ======= e >>>>>>> origin/main é a versão do repositório remoto. E precisa ter alteração para resolver o conflito. Tudo o que estiver depois dos símbolos ">>>>>>>" não precisa ser alterado.
 
 **Resolução manual:** Resolução combinando as duas sugestões:
 
