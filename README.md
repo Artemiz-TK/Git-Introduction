@@ -434,7 +434,7 @@ Bom, acho que é isso que vai ser usado do `git diff`
 
 ##### <h4>Status</h4>
 
-O comando `git status` mostra em que branch você está, mas a principal funcionalidade é que esse comando exibe o estado do diretório de trabalho (onde os ainda não está na stage) e da área stage (quando você executa o comando `git add`). Também dá para ver se tem algum conflito por [merge](#mesclar-merge) com esse comando.
+O comando `git status` mostra em que branch você está, mas a principal funcionalidade é que esse comando exibe o estado do diretório de trabalho (onde ainda não se adicionou, ou seja, não executou o comando `git add`) e da área stage (quando você executa o comando `git add`). Também dá para ver se tem algum conflito por [merge](#mesclar-merge) com esse comando.
 
 ###### <h5>Exemplo</h5>
 
@@ -468,9 +468,14 @@ Uma introdução bem basica: sempre que a gente clona um repositório ou ou inic
 ##### Como é o procedimento
 
 ```bash
-git add arquivo.txt # adiciona apenas o arquivo específico
-git commit -m "adicionando o arquivo.txt ao remoto" # faz um comentário com a mensagem 'adicionando o arquivo.txt ao remoto'. Você pode colocar qualquer mensagem aqui, mas é bom que seja intuitiva.
-git push # sobe todos os commits para o remoto
+# adiciona apenas o arquivo específico
+git add arquivo.txt
+
+# faz um comentário com a mensagem 'adicionando o arquivo.txt ao remoto'.
+git commit -m "adicionando o arquivo.txt ao remoto" # Você pode colocar qualquer mensagem aqui, mas é bom que seja intuitiva.
+
+# sobe todos os commits para o remoto
+git push
 ```
 
 Entenda o nome 'remoto' como referência para o repositório remoto.
