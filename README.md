@@ -22,8 +22,10 @@
           - [Exemplo](#exemplo-1)
         - [Log](#log)
           - [Exemplo](#exemplo-2)
-        - [Status](#status)
+        - [Diff](#diff)
           - [Exemplo](#exemplo-3)
+        - [Status](#status)
+          - [Exemplo](#exemplo-4)
       - [Adicionar, comentar e subir para o repositório (git add; git commit; git push)](#adicionar-comentar-e-subir-para-o-repositório-git-add-git-commit-git-push)
         - [Introdução bem básica](#introdução-bem-básica)
         - [Como é o procedimento](#como-é-o-procedimento)
@@ -33,21 +35,21 @@
         - [git fetch](#git-fetch)
           - [Pra quê serve](#pra-quê-serve)
           - [Como usar](#como-usar)
-          - [Exemplo](#exemplo-4)
+          - [Exemplo](#exemplo-5)
       - [git merge (mesclar)](#git-merge-mesclar)
         - [Pra quê serve](#pra-quê-serve-1)
         - [Como usar](#como-usar-1)
-        - [Exemplo](#exemplo-5)
-      - [❗Conflitos❗](#conflitos)
         - [Exemplo](#exemplo-6)
+      - [❗Conflitos❗](#conflitos)
+        - [Exemplo](#exemplo-7)
       - [git rebase](#git-rebase)
         - [Pra que serve](#pra-que-serve)
         - [Como usar](#como-usar-2)
-          - [Exemplo](#exemplo-7)
+          - [Exemplo](#exemplo-8)
       - [git pull](#git-pull)
         - [Pra que serve](#pra-que-serve-1)
         - [Como usar](#como-usar-3)
-          - [Exemplo](#exemplo-8)
+          - [Exemplo](#exemplo-9)
           - [Como finciona](#como-finciona)
 
 O **Git** é um sistema de controle de versões distribuído. Um sistema de controle de versões distribuído (como o **Git**) é como ter checkpoints compartilhados em um jogo multiplayer:
@@ -145,12 +147,12 @@ Acredito que só vamos usar mais o HTTPS para clonar.
 
 ##### <h4>Branch</h4>
 
-O comando `git branch` por si só mostra quantas [branchs](#o-que-é-uma-branch) existe no projeto. Mas se for passado algum argumento, uma nova branch será criada
+O comando `git branch` por si só mostra quantas [branches](#o-que-é-uma-branch) existe no projeto. Mas se for passado algum argumento, uma nova branch será criada
 
 ###### <h5>Exemplo</h5>
 
 ```bash
-git branch # sem nenhum argumento passado, só vai mostra quantas branchs existem
+git branch # sem nenhum argumento passado, só vai mostra quantas branches existem
 ```
 
 Saída
@@ -163,7 +165,7 @@ Agora para criar uma nova branch
 
 ```bash
 git branch master # coloque o nome que preferir ou deixe master
-git branch # exibe as branchs
+git branch # exibe as branches
 ```
 
 Saída
@@ -173,13 +175,13 @@ Saída
   master
 ```
 
-O **"*"** indica em qual branch você está atualmente. Logo abaixo você vai aprender a como navegar entre as branchs.
+O **"*"** indica em qual branch você está atualmente. Logo abaixo você vai aprender a como navegar entre as branches.
 
 <br>
 
 ##### <h4>Checkout</h4>
 
-o comando `git checkout` é basicamente um comando que fica trocando de [branchs](#o-que-é-uma-branch) e voltar para alguns commits, como se estivesse viajando no tempo. Aqui, só vai ser preciso entender apenas a troca de **branchs**.
+o comando `git checkout` é basicamente um comando que fica trocando de [branches](#o-que-é-uma-branch) e voltar para alguns commits, como se estivesse viajando no tempo. Aqui, só vai ser preciso entender apenas a troca de **branches**.
 
 Utilizando o exemplo do tópico [Branch](#exemplo), vamos trocar para a branch master
 
@@ -187,7 +189,7 @@ Utilizando o exemplo do tópico [Branch](#exemplo), vamos trocar para a branch m
 
 ```bash
 git checkout master # saindo da branch "main" para a "master"
-git branch # exibe as branchs
+git branch # exibe as branches
 ```
 
 Saída
@@ -203,7 +205,7 @@ Vai ser algo similar a isso. Para voltar para a "main" é só repetir o processo
 
 ```bash
 git checkout main
-git branch # exibe as branchs
+git branch # exibe as branches
 ```
 
 Saída
@@ -220,7 +222,7 @@ Também dá para criar e já trocar de branch, se faz desse jeito:
 
 ```bash
 git checkout -b feature # cria e já troca para a branch especificada
-git branch # exibe as branchs
+git branch # exibe as branches
 ```
 
 Saída (pode ser algo similar também)
@@ -293,6 +295,114 @@ Aqui a hash é bem mais curta, o medo deve ter sumido rsrs
 
 <br>
 
+##### <h4>Diff</h4>
+O comando `git diff` é usado para mostrar, comparar e entender melhor as mudanças feitas no projeto.
+
+###### <h5>Exemplo</h5>
+
+
+```bash
+git diff
+```
+
+O comando acima vai mostrar as mudanças feitas na área de trabalho. Se você não tiver feito modificações, nada será exibido.
+
+<br>
+Agora um exemplo melhor: execute o comando abaixo, não precisa entender muito o `git remote` já que não vamos usar.
+
+```bash
+# adicionando um remoto com nome origin-a
+git remote add origin-a https://github.com/Artemiz-TK/Motores_ProjetoFinal_SegundoAno.git
+
+# adcionando um remoto com o nome origin-b
+git remote add origin-b https://github.com/Artemiz-TK/Motores-Projeto.git
+
+# buscando todas as atualizações
+git fetch --all
+
+# comparando dois arquivos em repositórios distintos
+git diff origin-a/main:./.gitignore origin-b/main:./.gitignore
+```
+
+**Ok, o que tá acontecendo aqui?** Aqui, eu adicionei dois remotos - um com o nome `origin-a`, outro com o nome `origin-b` - que apontam para um determinados repositórios distintos. Depois, eu busco todas as atualizações possivéis e, por fim, comparo dois arquivos.
+
+Agora vamos focar na linha do comando `git diff`. **O que essa linha faz?** Vou dividir por partes:
+
+``git diff``: esse comando — nesse caso — diz quais as mudanças que você precisa fazer para transformar o arquivo `origin-a/main:./.gitignore` no arquivo `origin-b/main:./.gitignore`
+
+`origin-a/main:./.gitignore`: esse argumento começa com o remoto, que aponta para o link do repositório, depois vem a branch, que nesse caso é a `main`. O `./` indica que o arquivo que a gente quer encontrar está no diretório raiz do repositório. E o `.gitignore` é o arquivo que a gente quer comparar.
+
+A mesma coisa vale para o `origin-b/main:./.gitignore`, só que o remoto `origin-b` aponta para outro repositório.
+
+Para você tornar esses dois arquivos iguais, a linha que vier em vermelho, você precisa remover, e a linha que vier em verde, você precisa adicionar.
+
+Saída:
+
+```yaml
+diff --git a/.gitignore b/.gitignore
+index c8d4fba..84b562f 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -2,7 +2,6 @@
+ #
+ # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+ #
+-.utmp/
+ /[Ll]ibrary/
+ /[Tt]emp/
+ /[Oo]bj/
+@@ -25,9 +24,7 @@
+ /[Aa]ssets/Plugins/Editor/JetBrains*
+
+ # Visual Studio cache directory
+-.vs/
+ .vscode/
+-.idea/
+
+ # Gradle cache directory
+ .gradle/
+@@ -73,4 +70,4 @@ crashlytics-build.properties
+
+ # Temporary auto-generated Android Assets
+ /[Aa]ssets/[Ss]treamingAssets/aa.meta
+-/[Aa]ssets/[Ss]treamingAssets/aa/*
++/[Aa]ssets/[Ss]treamingAssets/aa/*
+\ No newline at end of file
+```
+
+Não dá para aparecer aqui as linhas vermelhas e verdes, mas se você executar, vai conseguir ver.
+
+Dá para usar o comando `git diff` com arquivos, branches, commits, [conflitos não resolvidos](#conflitos) e por aí vai.
+
+Exemplo com commit (sugiro que tenha visto o tópico [log](#log)):
+```bash
+git log --oneline
+git diff 0d97ee9 424a9b7 # isso é só um exemplo, com certeza a hash dos seus commits vão ser diferentes dessas
+```
+
+ou um comparar as mudanças de um commit antigo com a área de trabalho atual (onde não se adicionou e nem commitou nada):
+```bash
+git diff HEAD~1
+```
+
+Exemplo com branches:
+```bash
+git diff main master # compara as diferenças das duas branches
+```
+
+ou até melhor:
+```bash
+git diff main origin/main # compara as diferenças entre a branch local com a branch do repositório
+```
+
+Exemplo com [conflitos](#conflitos) não resolvidos:
+```bash
+git diff # mostra conflitos não resolvidos, se tiver
+```
+
+Bom, acho que é isso que vai ser usado do `git diff`
+<br>
+
 ##### <h4>Status</h4>
 
 O comando `git status` mostra em que branch você esta, mas a principal funcionalidade é que esse comando exibe o estado do diretório de trabalho (onde os ainda não está na stage) e da área stage (quando você executa o comando `git add`). Também dá para ver se tem algum conflito por [merge](#mesclar-merge) com esse comando.
@@ -349,7 +459,7 @@ git add * # adiciona todos os arquivos que foram modificados
 
 #### <h3>Atualizar Repositórios (fetch)</h3>
 
-Aqui a gente vai entender um pouco do comando `git fetch`. Antes de ir pro comando, é preciso entender um pouco sobre o que são **remotes** e **branchs**
+Aqui a gente vai entender um pouco do comando `git fetch`. Antes de ir pro comando, é preciso entender um pouco sobre o que são **remotes** e **branches**
 
 ##### O que é um remote?
 Bom, um remote é basicamente um nome que aponta para o link de um repositório remoto. É como se fosse um tipo de atalho, que quando você digita o nome, é como se você estivesse digitando o link onde está o repositório. Sempre que você clona um repositório, o nome padrão do remote é "origin". Tente executar o comando abaixo para fixar melhor
@@ -373,7 +483,7 @@ git remote rename origin repo
 ```
 Agora, ao invés de usar o origin, você vai usar o nome repo ou o nome que você escolher.
 
-Acho que deve ter ficado claro, agora é só tentar entender branchs pra ir pro git fetch.
+Acho que deve ter ficado claro, agora é só tentar entender branches pra ir pro git fetch.
 
 ---
 
@@ -468,7 +578,7 @@ git diff main origin/main # Mostra diferenças entre sua branch e o remoto
 #### <h3>git merge (mesclar)</h3>
 
 ##### <h4>Pra quê serve</h4>
-O comando `git merge` é usado para **combinar/mesclar duas [branchs](#o-que-é-uma-branch)**, trazendo as alterações de uma para a outra.
+O comando `git merge` é usado para **combinar/mesclar duas [branches](#o-que-é-uma-branch)**, trazendo as alterações de uma para a outra.
 
 ##### <h4>Como usar</h4>
 
