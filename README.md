@@ -291,7 +291,17 @@ d9f1400 (HEAD -> main, origin/main, master, feature) fix: resolvendo mais um err
 424a9b7 feat: adicionando o arquivo README.md ao remoto
 ```
 
-Aqui a hash é bem mais curta, o medo deve ter sumido rsrs
+Aqui a hash é bem mais curta
+
+<br>
+
+Segue abaixo outro exemplo do `git log`
+```bash
+git log origin/main..main # mostar os commits que estão no local e não no remoto
+git log main..origin/main # mostra os commits que estão no remoto e não no local
+```
+
+Se existir algum commit no repositório que não exita no seu repositório local, atualize seu repositório usando o comando [git pull](#git-pull). E, por favor, não use a flag `--force`. Pode gerar perda de dados. Para entender melhor sobre isso, vá para o tópico de [conflitos](#conflitos).
 
 <br>
 
@@ -371,6 +381,7 @@ index c8d4fba..84b562f 100644
 ```
 
 Não dá para aparecer aqui as linhas vermelhas e verdes, mas se você executar, vai conseguir ver.
+
 
 Dá para usar o comando `git diff` com arquivos, branches, commits, [conflitos não resolvidos](#conflitos) e por aí vai.
 
