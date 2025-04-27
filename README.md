@@ -301,7 +301,25 @@ git log origin/main..main # mostar os commits que estão no local e não no remo
 git log main..origin/main # mostra os commits que estão no remoto e não no local
 ```
 
-Se existir algum commit no repositório que não exita no seu repositório local, atualize seu repositório usando o comando [git pull](#git-pull). E, por favor, não use a flag `--force`. Pode gerar perda de dados. Para entender melhor sobre isso, vá para o tópico de [conflitos](#conflitos).
+Um exemplo de saída para `git log origin/main..main` é esse:
+
+```yaml
+commit 12db4fccaa3aee8a4c4fc4dde1918e50a7703216 (HEAD -> main)
+Author: Lucas <alanderson.lucas@escolar.ifrn.edu.br>
+Date:   Sun Apr 27 00:59:54 2025 -0300
+
+    update: adicionando mais conteúdo para o tópico 'Log'
+
+commit 668d60d5b584b8b67d4cafd4536bb95373f74890
+Author: Lucas <alanderson.lucas@escolar.ifrn.edu.br>
+Date:   Sun Apr 27 00:45:10 2025 -0300
+
+    update: adicionando o tópico 'Diff' ao arquivo
+```
+
+Sim, isso é antes de eu ter subido essa versão do arquivo para o repositório.
+
+Se você executou o comando `git log main..origin/main` e existir algum commit no repositório que não exita no seu repositório local, atualize seu repositório usando o comando [git pull](#git-pull). E, por favor, não use a flag `--force` no comando git push. Pode gerar perda de dados. Para entender melhor sobre isso, vá para o tópico de [conflitos](#conflitos).
 
 <br>
 
