@@ -152,7 +152,7 @@ O comando `git branch` por si só mostra quantas [branches](#o-que-é-uma-branch
 ###### <h5>Exemplo</h5>
 
 ```bash
-git branch # sem nenhum argumento passado, só vai mostra quantas branches existem
+git branch # sem nenhum argumento passado, só vai mostrar quantas branches existem
 ```
 
 Saída
