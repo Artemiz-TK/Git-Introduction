@@ -677,7 +677,7 @@ O link é só para deixar mais didático
 
 A outra pessoa tem que atualizar o repositório local:
 ```bash
-git fetch origin # aqui vai atualizar todos as branches remotos
+git fetch origin # aqui vai atualizar todos as branches
 git merge origin/main
 ```
 Pausa rápida: Eu não sei se vamos usar apenas a branch `main` para o projeto ou se vamos fazer mais de uma branch, então é melhor usar o comando `git fetch origin`
@@ -692,7 +692,7 @@ Tarefa 1: Revisar o conteúdo com base nas novas exigências.
 Tarefa 2: Agendar a próxima reunião.
 ```
 
-O conteúdo entre <<<<<<< HEAD e ======= é a sua versão local. O conteúdo entre ======= e >>>>>>> origin/main é a versão do repositório remoto. E precisa ter alteração para resolver o conflito. Tudo o que estiver depois dos símbolos ">>>>>>>" não precisa ser alterado.
+O conteúdo entre <<<<<<< HEAD e ======= é a sua versão local. O conteúdo entre ======= e >>>>>>> origin/main é a versão do repositório remoto. E precisa ter alteração para resolver o conflito. Tudo o que estiver abaixo dos símbolos >>>>>>> não precisa ser alterado.
 
 **Resolução manual:** Resolução combinando as duas sugestões:
 
