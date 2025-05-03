@@ -701,6 +701,8 @@ Tarefa 1: Revisar o conteúdo considerando as novas exigências e priorizando a 
 Tarefa 2: Agendar a próxima reunião.
 ```
 
+Agora é só adicionar, commitar e subir para o repositório:
+
 ```bash
 git add merge.txt
 git commit -m "Resolucao do conflito na tarefa 1 combinando as duas sugestoes"
@@ -709,7 +711,7 @@ git push origin main
 
 Conflito resolvido!
 
-Sim, cê tem que tirar aqueles símbolos e escolher algo para colocar no lugar. Isso é uma arquivo de texto, o que é bem simples de corrigir esses conflitos, mas isso poderia ser um código C-Sharp ou algum outro tipo de arquivo.
+Sim, cê tem que tirar aqueles símbolos e escolher algo para colocar no lugar. Isso é um arquivo de texto, o que é bem simples de corrigir esses conflitos, mas isso poderia ser um código C-Sharp ou algum outro tipo de arquivo.
 
 O importante para saber é que dá para resolver conflitos de várias formas.
 
