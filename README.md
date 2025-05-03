@@ -336,6 +336,7 @@ git diff
 O comando acima vai mostrar as mudanças feitas no diretório de trabalho. Se você não tiver feito modificações, nada será exibido.
 
 <br>
+
 Agora um exemplo melhor: execute o comando abaixo, não precisa entender muito o `git remote` já que não vamos usar.
 
 ```bash
@@ -724,7 +725,7 @@ Então, **não precisa combinar se não quiser** — o importante é que o arqui
 
 Sobre o Git bloquear o push porque o repositório foi atualizado, é como se o git dissesse: "Ei! Tem coisa nova lá no remoto que você ainda não viu. Você precisa atualizar seu repositório local primeiro, pra evitar sobrescrever sem querer as mudanças dos outros"
 
-Isso é uma proteção contra perda de dados. Por isso o push é rejeitado até você fazer [pull](#git-pull), resolver conflitos se tiver, e só então pode empurrar (push) de novo.
+Isso é uma proteção contra perda de dados. Por isso o push é rejeitado até você fazer [pull](#git-pull), resolver conflitos se tiver, e só então pode subir para o remoto (push) de novo.
 
 Então é sempre necessário ficar atualizando e combinando o repositório.
 
@@ -749,14 +750,14 @@ git checkout -b base
 # faça algumas mudanças e commits...
 ```
 
-2. Atualize a branch principal:
+2. Vá para a branch principal, atualize e depois mescle:
 ```bash
 git checkout main
 git fetch origin main
 git merge origin/main
 ```
 
-3. Reaplique seus commits da branch que você está atualmente em cima da main atualizada:
+3. Reaplique seus commits da branch que você está atualmente e sobreponha em cima da main atualizada:
 ```bash
 git checkout base
 git rebase main
@@ -770,7 +771,7 @@ git rebase --continue
 
 5. Envie as alterações (se necessário):
 ```bash
-git push origin base --force  # Use a flag "--force" com cuidado
+git push origin base --force # por favor, use a flag "--force" com cuidado — eu nem recomendo usar
 ```
 
 > [!NOTE]
