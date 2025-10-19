@@ -139,15 +139,13 @@ git clone git@github.com:Artemiz-TK/Git-Introduction.git
 
 Acredito que só vamos usar mais o HTTPS para clonar.
 
----
-
 #### <h2>Comandos úteis</h2>
 
-##### <h4>Branch</h4>
+**Branch**
 
 O comando `git branch` por si só mostra quantas [branches](#o-que-é-uma-branch) existe no projeto. Mas se for passado algum argumento, uma nova branch será criada
 
-###### <h5>Exemplo</h5>
+**Exemplo**
 
 ```bash
 git branch # sem nenhum argumento passado, só vai mostrar quantas branches existem
